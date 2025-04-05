@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.home.restaurant.dto.model.FoodItemDTO;
 import com.home.restaurant.mapping.FoodItemMapping;
 import com.home.restaurant.model.FoodItem;
-import com.home.restaurant.model.Menu;
 import com.home.restaurant.repository.FoodItemRepository;
 import com.home.restaurant.service.interfaces.FoodItemService;
 
