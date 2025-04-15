@@ -1,5 +1,7 @@
 package com.home.restaurant.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.home.restaurant.dto.model.RestaurantDTO;
@@ -12,11 +14,11 @@ import com.home.restaurant.service.interfaces.RestaurantService;
 public class RestaurantServiceImpl implements RestaurantService {
 
 	private RestaurantRepository restaurantRepository;
-	
+
 	RestaurantServiceImpl(RestaurantRepository restaurantRepository) {
 		this.restaurantRepository = restaurantRepository;
 	}
-	
+
 	public RestaurantDTO getRestaurantById(Long id) {
 		Restaurant restaurant = restaurantRepository.getReferenceById(id);
 		return RestaurantMappper.toDTO(restaurant);
