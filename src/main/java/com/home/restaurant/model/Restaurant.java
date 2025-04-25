@@ -1,5 +1,6 @@
 package com.home.restaurant.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -26,6 +27,10 @@ public class Restaurant {
 	@Getter
     @Column(nullable = false)
     private String location;
+    
+    @Getter
+    @Column(precision = 3, scale = 1)
+    private BigDecimal rating; 
     
 	@Getter
     @Column(nullable = false)

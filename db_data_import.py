@@ -31,8 +31,8 @@ df_restaurants = pd.read_excel(xls, sheet_name="Restaurants")
 
 for _, row in df_restaurants.iterrows():
     cursor.execute(
-        "INSERT INTO restaurant (id, name, location, phone, email, image_url, created_at) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id;",
-        (int(row["restaurant_id"]), row["name"], row["location"], row["phone"], row["email"], row["image_url"], pd.to_datetime(row["created_at"])),
+        "INSERT INTO restaurant (id, name, location, rating, phone, email, image_url, created_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id;",
+        (int(row["restaurant_id"]), row["name"], row["location"], float(row["rating"]), row["phone"], row["email"], row["image_url"], pd.to_datetime(row["created_at"])),
     )
     restaurant_id = cursor.fetchone()[0]
     print(f"Inserted Restaurant: {row['name']} (ID: {restaurant_id})")
@@ -42,8 +42,8 @@ df_menus = pd.read_excel(xls, sheet_name="Menus")
 
 for _, row in df_menus.iterrows():
     cursor.execute(
-        "INSERT INTO menu (id, restaurant_id, name, description, image_url, created_at) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id;",
-        (int(row["menu_id"]), int(row["restaurant_id"]), row["name"], row["description"], row["image_url"], pd.to_datetime(row["created_at"])),
+        "INSERT INTO menu (id, restaurant_id, name, description, rating, image_url, created_at) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id;",
+        (int(row["menu_id"]), int(row["restaurant_id"]), row["name"], row["description"], float(row["rating"]), row["image_url"], pd.to_datetime(row["created_at"])),
     )
     menu_id = cursor.fetchone()[0]
     print(f"Inserted Menu: {row['name']} (ID: {menu_id})")

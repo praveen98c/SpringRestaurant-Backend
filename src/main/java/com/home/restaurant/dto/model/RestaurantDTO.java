@@ -1,15 +1,19 @@
 package com.home.restaurant.dto.model;
 
+import java.math.BigDecimal;
+
 public class RestaurantDTO {
 	private Long id;
 	private String name;
 	private String location;
+	private BigDecimal rating;
 	private String imageUrl;
 
-	public RestaurantDTO(Long id, String name, String location, String imageUrl) {
+	public RestaurantDTO(Long id, String name, String location, BigDecimal rating, String imageUrl) {
 		this.id = id;
 		this.name = name;
 		this.location = location;
+		this.rating = rating;
 		this.imageUrl  = imageUrl;
 	}
 
@@ -27,5 +31,9 @@ public class RestaurantDTO {
 
 	public String getImageUrl() {
 		return imageUrl;
+	}
+
+	public BigDecimal getRating() {
+		return rating;
 	}
 }

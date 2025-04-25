@@ -6,6 +6,6 @@ import com.home.restaurant.model.Restaurant;
 public class RestaurantMappper {
 
 	public static RestaurantDTO toDTO(Restaurant model) {
-		return new RestaurantDTO(model.getId(), model.getName(), model.getLocation(), model.getImageUrl());
+		return new RestaurantDTO(model.getId(), model.getName(), model.getLocation(), model.getRating(), model.getImageUrl());
 	}
 }

@@ -1,6 +1,7 @@
 package com.home.restaurant.model;
 
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -18,6 +19,7 @@ import lombok.Getter;
 public class Menu {
 
     @Id
+    @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -32,7 +34,12 @@ public class Menu {
     @Getter
     @Column(nullable = false)
     private String description;
+    
+    @Getter
+    @Column(precision = 3, scale = 1)
+    private BigDecimal rating; 
 
+    @Getter
     @Column(name = "image_url")
     private String imageUrl;
 

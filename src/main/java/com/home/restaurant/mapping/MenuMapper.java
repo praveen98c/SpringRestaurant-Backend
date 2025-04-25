@@ -6,6 +6,6 @@ import com.home.restaurant.model.Menu;
 public class MenuMapper {
 
 	public static MenuDTO toDTO(Menu model) {
-		return new MenuDTO(model.getName(), model.getDescription());
+		return new MenuDTO(model.getName(), model.getDescription(), model.getRating());
 	}
 }
