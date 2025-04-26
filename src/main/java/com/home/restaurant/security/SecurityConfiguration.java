@@ -37,7 +37,8 @@ public class SecurityConfiguration {
 								RestApiPaths.Restaurants.BASE,
 								RestApiPaths.Restaurants.BASE + RestApiPaths.Restaurants.RESTAURANT_BY_ID,
 								RestApiPaths.Menus.BASE + RestApiPaths.Menus.RESTAURANT_BY_ID,
-								RestApiPaths.FoodItems.BASE + RestApiPaths.FoodItems.MENU_BY_ID)
+								RestApiPaths.FoodItems.BASE + RestApiPaths.FoodItems.MENU_BY_ID,
+								RestApiPaths.FoodItems.BASE + RestApiPaths.FoodItems.FOODITEM_BY_ID)
 						.authenticated())
 				.sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

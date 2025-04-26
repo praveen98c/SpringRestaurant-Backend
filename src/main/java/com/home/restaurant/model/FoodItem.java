@@ -16,6 +16,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "food_item")
@@ -44,6 +45,7 @@ public class FoodItem {
 	private String description;
 
 	@Getter
+	@Setter
 	@Column(precision = 3, scale = 1)
 	private BigDecimal rating;
 

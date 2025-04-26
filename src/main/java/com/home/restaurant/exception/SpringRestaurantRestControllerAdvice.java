@@ -22,4 +22,9 @@ public class SpringRestaurantRestControllerAdvice {
 	public ResponseEntity<ApiResponse> userAlreadyExists(UserAlreadyExistsException ex) {
 		return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiResponse(RestApiCode.USER_ALREADY_EXISTS));
 	}
+	
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ApiResponse> resourceNotFound(ResourceNotFoundException ex) {
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse(RestApiCode.RESOURCE_NOT_FOUND));
+	}
 }

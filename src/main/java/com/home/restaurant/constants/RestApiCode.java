@@ -5,7 +5,8 @@ public enum RestApiCode {
 	// Error Codes
 	USER_ALREADY_EXISTS(2001, "User already exists"), 
 	USER_NOT_FOUND(2002, "User not found"),
-	AUTH_FAILED(2003, "Authentication failed");
+	AUTH_FAILED(2003, "Authentication failed"),
+	RESOURCE_NOT_FOUND(2004, "Resource not found");
 
 	private final int code;
 	private final String message;

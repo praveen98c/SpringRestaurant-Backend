@@ -7,5 +7,5 @@ import com.home.restaurant.dto.model.RestaurantDTO;
 
 public interface RestaurantService {
 	RestaurantDTO getRestaurantById(Long id);
-	Page<RestaurantDTO>  getRestaurants(PageRequest request);
+	Page<RestaurantDTO> getRestaurants(PageRequest request);
 }

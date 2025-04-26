@@ -24,6 +24,7 @@ public class RestApiPaths {
 	
 	public static class FoodItems {
 		public static final String BASE = "/api/fooditems";
+		public static final String FOODITEM_BY_ID = "/{" + PathVariables.ID + "}";
 		public static final String MENU_BY_ID = "/menu/{" + PathVariables.ID + "}";
 	}
 }
