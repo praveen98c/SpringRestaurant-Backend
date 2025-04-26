@@ -13,6 +13,6 @@ public class CuisineConverter implements AttributeConverter<Cuisine, String> {
 
 	@Override
 	public Cuisine convertToEntityAttribute(String dbData) {
-		return (dbData == null) ? null : Cuisine.valueOf(dbData);
+		return (dbData == null) ? null : Cuisine.valueOf(dbData.toUpperCase());
 	}
 }

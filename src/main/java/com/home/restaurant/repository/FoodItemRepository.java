@@ -8,5 +8,5 @@ import com.home.restaurant.model.FoodItem;
 
 @Repository
 public interface FoodItemRepository extends JpaRepository<FoodItem, Long> {
-	List<FoodItem> findByMenuId(Long restaurantId);
+	List<FoodItem> findByMenuId(Long menuId);
 }

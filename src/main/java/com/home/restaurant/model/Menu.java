@@ -1,6 +1,5 @@
 package com.home.restaurant.model;
 
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -18,31 +17,31 @@ import lombok.Getter;
 @Table(name = "menu")
 public class Menu {
 
-    @Id
-    @Getter
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@Getter
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "restaurant_id")
-    private Restaurant restaurant;
+	@ManyToOne
+	@JoinColumn(name = "restaurant_id")
+	private Restaurant restaurant;
 
-    @Getter
-    @Column(nullable = false)
-    private String name;
-    
-    @Getter
-    @Column(nullable = false)
-    private String description;
-    
-    @Getter
-    @Column(precision = 3, scale = 1)
-    private BigDecimal rating; 
+	@Getter
+	@Column(nullable = false)
+	private String name;
 
-    @Getter
-    @Column(name = "image_url")
-    private String imageUrl;
+	@Getter
+	@Column(nullable = false)
+	private String description;
 
-    @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private LocalDateTime createdAt;
+	@Getter
+	@Column(precision = 3, scale = 1)
+	private BigDecimal rating;
+
+	@Getter
+	@Column(name = "image_url")
+	private String imageUrl;
+
+	@Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	private LocalDateTime createdAt;
 }

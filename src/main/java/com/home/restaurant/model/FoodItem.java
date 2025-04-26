@@ -21,38 +21,40 @@ import lombok.Getter;
 @Table(name = "food_item")
 public class FoodItem {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Getter
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "menu_id")
-    private Menu menu;
+	@ManyToOne
+	@JoinColumn(name = "menu_id")
+	private Menu menu;
 
-    @Getter
-    @Column(nullable = false)
-    private String name;
-    
-    @Getter
-    @Convert(converter = CuisineConverter.class)
-    @Column(nullable = false)
-    private Cuisine cuisine;
-    
-    @Getter
-    @Column(nullable = false)
-    private String description;
-    
-    @Getter
-    @Column(precision = 3, scale = 1)
-    private BigDecimal rating; 
-    
-    @Getter
-    @Column(nullable = false)
-    private BigDecimal price;
+	@Getter
+	@Column(nullable = false)
+	private String name;
 
-    @Column(name = "image_url")
-    private String imageUrl;
+	@Getter
+	@Convert(converter = CuisineConverter.class)
+	@Column(nullable = false)
+	private Cuisine cuisine;
 
-    @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private LocalDateTime createdAt;
+	@Getter
+	@Column(nullable = false)
+	private String description;
+
+	@Getter
+	@Column(precision = 3, scale = 1)
+	private BigDecimal rating;
+
+	@Getter
+	@Column(nullable = false)
+	private BigDecimal price;
+
+	@Getter
+	@Column(name = "image_url")
+	private String imageUrl;
+
+	@Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	private LocalDateTime createdAt;
 }
